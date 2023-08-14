@@ -1,5 +1,6 @@
 #!/bin/bash
-cp /usr/lib/go-1.18/bin/go /usr/bin/
+if [[ -z $GO_VERSION ]]; then GO_VERSION="1.20.1"; fi
+wget https://go.dev/dl/go$GO_VERSION.linux-amd64.tar.gz && tar -C /usr/local -xzf go$GO_VERSION.linux-amd64.tar.gz
 runsvdir -P /etc/service &
 # ++ Download validator keys ++
 mkdir /root/validator_keys
