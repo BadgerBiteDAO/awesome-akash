@@ -14,6 +14,7 @@ services:
       - "LISTEN_PORT=3333" # v2RAY listen port
       - "REMOTE_PORT=8585" # Remote port for are connection sentinel client service.
       - "IPV4_ADDRESS=" # Node static IP address ( of leases section )
+      - "RPC_ADDRESSES=" # Rpc adresses seperate by a ,
     expose:
       - port: 8585 # REMOTE_URL_PORT
         as: 8585 # REMOTE_URL_PORT
